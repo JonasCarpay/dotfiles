@@ -16,6 +16,7 @@ alias dc="cd ~/Documents/"
 alias dv="cd ~/Dev/"
 alias l=ls
 alias bci="brew cask install"
+alias ack=ag
 
 ## FUNCTIONS
 function chpwd() {
