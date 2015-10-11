@@ -37,9 +37,9 @@ Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
 
-"""""""""""""""""""""
-""" Configuration """
-"""""""""""""""""""""
+""""""""""""""""""""""
+""" Configuration: """
+""""""""""""""""""""""
 
 """ General
 set autoindent
@@ -98,9 +98,9 @@ let g:syntastic_python_checkers=['pep8']
 let g:syntastic_html_tidy_blocklevel_tags=['template']
 nnoremap <leader>st :SyntasticToggleMode<CR>
 
-""""""""""""""""""""
-""" Key mappings """
-""""""""""""""""""""
+"""""""""""""""""""""
+""" Key_mappings: """
+"""""""""""""""""""""
 nnoremap <Leader>ch :nohl<CR>
 nnoremap <Leader>w :wa<CR>
 nnoremap <Leader>vs <C-w>v<C-w>l
@@ -141,9 +141,9 @@ nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
 
-"""""""""""""""""
-""" Functions """
-"""""""""""""""""
+""""""""""""""""""
+""" Functions: """
+""""""""""""""""""
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
