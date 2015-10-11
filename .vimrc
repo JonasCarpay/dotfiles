@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-eunuch'
 Plugin 'SirVer/ultisnips' " Track the engine.
 Plugin 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 Plugin 'altercation/vim-colors-solarized'
@@ -30,7 +31,6 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Slava/vim-spacebars'
 Plugin 'jeetsukumaran/vim-indentwise'
-Plugin 'rizzatti/dash.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 
@@ -55,10 +55,6 @@ let mapleader = "\<space>"
 syntax enable
 set hidden
 set history=10000
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set showmatch
 set incsearch
 set hlsearch
@@ -158,6 +154,18 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<CR>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 """ Create non-existant parent directories on save
 function s:MkNonExDir(file, buf)
