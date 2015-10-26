@@ -92,17 +92,22 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Syntastic configuration
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-" Syntastic configuration
-let g:syntastic_java_checkers=['checkstyle']
-let g:syntastic_java_checkstyle_conf_file='~/Dev/SEM_46/checkstyle_cfg.xml'
+let g:syntastic_mode_map = {
+      \ "mode": "passive",
+      \ "active_filetypes": [],
+      \ "passive_filetypes": [] }
+let g:syntastic_java_checkers=['javac','checkstyle']
+let g:syntastic_java_checkstyle_conf_file='~/Dev/SEM_46/checkstyle.xml'
 let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.9/libexec/checkstyle-6.9-all.jar'
 let g:syntastic_python_checkers=['pep8']
 let g:syntastic_html_tidy_blocklevel_tags=['template']
+nnoremap <leader>sc :SyntasticCheck<CR>
 nnoremap <leader>st :SyntasticToggleMode<CR>
 
 """""""""""""""""""""
