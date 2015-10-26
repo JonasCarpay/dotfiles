@@ -33,6 +33,7 @@ Plugin 'Slava/vim-spacebars'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -107,24 +108,14 @@ nnoremap <Leader>vs <C-w>v<C-w>l
 nnoremap <Leader>hs <C-w>s<C-w>j
 inoremap {<CR> {<CR>}<ESC>O
 nnoremap <leader>fef gg=G''
-nnoremap <Leader>gg :GitGutterToggle<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-
-" Language-specific
-nnoremap <leader>rr :w<CR>:!ruby %<CR>
-nnoremap <leader>rp :w<CR>:!python %<CR>
-autocmd FileType haskell nnoremap <leader>rh :w<CR>:!ghci %<CR>|inoremap >> <space>-><space>|inoremap << <space><-<space>
-autocmd FileType javascript inoremap ({<CR> ({<CR>});<ESC>O
-autocmd FileType html let g:user_emmet_leader_key = '<leader><leader>'
-
-" Easy-align
-vmap <Enter> <Plug>(LiveEasyAlign)
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<c-c>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+nnoremap <leader>fef gg=G''
+nnoremap <leader>cw :lclose<CR>:cclose<CR>
+nnoremap <leader>ag :Ag 
+nnoremap <s-tab> zMzv
+nnoremap J zj
+nnoremap K zk
+nnoremap H J
+nnoremap Q <nop>
 
 """ Navigation
 inoremap hj <esc>
@@ -141,6 +132,27 @@ nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
 
+" Git/gutter/fugitive
+nnoremap <Leader>gg :GitGutterToggle<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+
+" Language-specific
+nnoremap <leader>rr :w<CR>:!ruby %<CR>
+nnoremap <leader>rp :w<CR>:!python %<CR>
+autocmd FileType haskell nnoremap <leader>rh :w<CR>:!ghci %<CR>|inoremap >> <space>-><space>|inoremap << <space><-<space>
+autocmd FileType javascript inoremap ({<CR> ({<CR>});<ESC>O
+autocmd FileType html let g:user_emmet_leader_key = '<leader><leader>'
+
+" Easy-align
+vmap <Enter> <Plug>(LiveEasyAlign)
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<c-c>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
 """"""""""""""""""
 """ Functions: """
 """"""""""""""""""
