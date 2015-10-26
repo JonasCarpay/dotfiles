@@ -77,10 +77,14 @@ set background=light
 let g:airline_powerline_fonts = 1
 let g:mustache_abbreviations = 1
 set laststatus=2
+cabbr <expr> %% expand('%:p:h')
 
 "Set cursorline in normal mode
-autocmd InsertEnter * set nocul
-autocmd InsertLeave * set cul
+set cursorline
+autocmd InsertEnter * set nocursorline
+autocmd InsertLeave * set cursorline
+autocmd BufEnter * set cursorline
+autocmd BufLeave * set nocursorline
 
 """ Syntastic """
 " Syntastic recommended defaults
