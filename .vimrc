@@ -50,7 +50,9 @@ set nocompatible
 set linebreak
 set breakindent
 set shell=/bin/bash
-set foldlevelstart=20
+set foldnestmax=2
+set foldmethod=syntax
+set foldlevel=1
 set scrolloff=5
 let mapleader = "\<space>"
 syntax enable
