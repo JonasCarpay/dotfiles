@@ -14,14 +14,15 @@ source $ZSH/oh-my-zsh.sh
 alias vi=vim
 alias dc="cd ~/Documents/"
 alias dv="cd ~/Dev/"
-alias l=ls
+alias l='ls -l'
 alias bci="brew cask install"
 alias ack=ag
+alias spa='spotify play album'
 
 ## FUNCTIONS
 function chpwd() {
 	emulate -L zsh
-	ls
+	ls -l
 }
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
