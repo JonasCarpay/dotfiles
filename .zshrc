@@ -18,6 +18,8 @@ alias l='ls -l'
 alias bci="brew cask install"
 alias ack=ag
 alias spa='spotify play album'
+alias lmk='latexmk -pvc -interaction=nonstopmode'
+alias lmc='latexmk -c'
 
 ## FUNCTIONS
 function chpwd() {
