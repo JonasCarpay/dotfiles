@@ -14,6 +14,8 @@ source $ZSH/oh-my-zsh.sh
 alias vi=vim
 alias dc="cd ~/Documents/"
 alias dv="cd ~/Dev/"
+alias dw="cd ~/Downloads/"
+alias dr="cd ~/Dropbox/"
 alias l='ls -l'
 alias bci="brew cask install"
 alias ack=ag
