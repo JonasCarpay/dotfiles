@@ -132,6 +132,8 @@ nnoremap Q <nop>
 
 """ Navigation
 inoremap hj <esc>
+inoremap HJ <esc>
+inoremap Hj <esc>
 nnoremap j gj
 nnoremap k gk
 " Split navigation
