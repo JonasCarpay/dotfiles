@@ -118,6 +118,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 """""""""""""""""""""
 nnoremap <Leader>ch :nohl<CR>
 nnoremap <Leader>w :wa<CR>
+nnoremap <leader>rs :w<CR>:source ~/.vimrc<CR>
 nnoremap <Leader>vs <C-w>v<C-w>l
 nnoremap <Leader>hs <C-w>s<C-w>j
 inoremap {<CR> {<CR>}<ESC>O
