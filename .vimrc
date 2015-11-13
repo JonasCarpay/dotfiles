@@ -102,8 +102,9 @@ let g:syntastic_mode_map = {
       \ "active_filetypes": [],
       \ "passive_filetypes": [] }
 let g:syntastic_java_checkers=['javac','checkstyle']
-let g:syntastic_java_checkstyle_conf_file='~/Dev/SEM_46/checkstyle.xml'
-let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.9/libexec/checkstyle-6.9-all.jar'
+let g:syntastic_java_javac_config_file_enabled = 1
+" let g:syntastic_java_checkstyle_conf_file='checkstyle.xml'
+" let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.9/libexec/checkstyle-6.9-all.jar'
 let g:syntastic_python_checkers=['pep8']
 let g:syntastic_html_tidy_blocklevel_tags=['template']
 nnoremap <leader>sc :SyntasticCheck<CR>:lopen<CR>
@@ -207,3 +208,7 @@ augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
+if filereadable(".vimrc_proj")
+  so .vimrc_proj
+endif
