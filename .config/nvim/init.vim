@@ -51,11 +51,13 @@
 " NeoBundle }}}
 
 " Key bindings {{{
+	let mapleader = "\<space>"
 	inoremap hj <esc>
 	" Remaps {{{
 		vnoremap > >gv
 		vnoremap < <gv
 		nnoremap Q <nop>
+		nnoremap , za
 	" Remaps }}}
 " Key bindings }}}
 
