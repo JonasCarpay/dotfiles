@@ -35,9 +35,12 @@
 
 		" File navigation
 		  NeoBundle 'scrooloose/nerdtree'
+		  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+		  NeoBundle 'ryanoasis/vim-devicons'
 
 		" Syntax
 		  NeoBundle 'Shougo/deoplete.nvim'
+			let g:deoplete#enable_at_startup = 1
 		  
 	" Boilerplate {{{
 		" Required:
