@@ -33,6 +33,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'enomsg/vim-haskellConcealPlus'
 
 call vundle#end()
 filetype plugin indent on
