@@ -28,14 +28,17 @@
 		" Required:
 		NeoBundleFetch 'Shougo/neobundle.vim'
 	" Boilerplate }}}
-	" Plugins {{{
+
 		" Git helpers
 		  NeoBundle 'tpope/vim-fugitive'
 		  NeoBundle 'airblade/vim-gitgutter'
 
 		" File navigation
 		  NeoBundle 'scrooloose/nerdtree'
-	" Plugins }}}
+
+		" Syntax
+		  NeoBundle 'Shougo/deoplete.nvim'
+		  
 	" Boilerplate {{{
 		" Required:
 		call neobundle#end()
