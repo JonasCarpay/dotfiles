@@ -52,6 +52,7 @@
 	" Remaps {{{
 		vnoremap > >gv
 		vnoremap < <gv
+		nnoremap Q <nop>
 	" Remaps }}}
 " Key bindings }}}
 
