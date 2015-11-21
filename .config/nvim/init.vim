@@ -56,8 +56,10 @@
 	syntax enable
 " }}}
 " Key bindings {{{
-	let mapleader = "\<space>"
+	let mapleader = ','
+	nnoremap <space> za
 	inoremap hj <esc>
+	vnoremap hj <esc>
 	" Remaps {{{
 		vnoremap > >gv
 		vnoremap < <gv
