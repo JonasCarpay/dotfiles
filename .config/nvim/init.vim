@@ -42,6 +42,9 @@
 		  NeoBundle 'altercation/vim-colors-solarized'
 		  NeoBundle 'Shougo/deoplete.nvim'
 			let g:deoplete#enable_at_startup = 1
+
+		" Other
+		  NeoBundle 'bling/vim-airline'
 		  
 	" Boilerplate {{{
 		" Required:
