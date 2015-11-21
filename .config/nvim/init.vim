@@ -52,7 +52,9 @@
 		endif
 	" Boilerplate }}}
 " NeoBundle }}}
-
+" System settings {{{
+	syntax enable
+" }}}
 " Key bindings {{{
 	let mapleader = "\<space>"
 	inoremap hj <esc>
