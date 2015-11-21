@@ -38,7 +38,8 @@
 		  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 		  NeoBundle 'ryanoasis/vim-devicons'
 
-		" Syntax
+		" Syntax and highlighting
+		  NeoBundle 'altercation/vim-colors-solarized'
 		  NeoBundle 'Shougo/deoplete.nvim'
 			let g:deoplete#enable_at_startup = 1
 		  
@@ -54,6 +55,9 @@
 " NeoBundle }}}
 " System settings {{{
 	syntax enable
+	set background=dark
+	colorscheme solarized
+	let g:airline_powerline_fonts = 1
 " }}}
 " Key bindings {{{
 	let mapleader = ','
