@@ -92,6 +92,8 @@
 	let g:tex_flavor = "latex"
 	colorscheme solarized
 	let g:airline_powerline_fonts = 1
+	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 " }}}
 " Key bindings {{{
 	let mapleader = "\<space>"
