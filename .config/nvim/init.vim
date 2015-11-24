@@ -72,7 +72,7 @@
 		  NeoBundle 'marijnh/tern_for_vim'
 		  NeoBundle 'jeetsukumaran/vim-indentwise'
 		  NeoBundle 'jeetsukumaran/vim-buffergator'
-		  
+
 	" Boilerplate {{{
 		" Required:
 		call neobundle#end()
@@ -146,36 +146,32 @@
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal foldlevel=0
 " }}}
-" NERDTree {{{
-	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && !empty(glob(".git")) | NERDTree | endif
-	let NERDTreeShowHidden=1
+" Plugin-specific {{{
+	" NERDTree {{{
+		autocmd StdinReadPre * let s:std_in=1
+		autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && !empty(glob(".git")) | NERDTree | endif
+		let NERDTreeShowHidden=1
 
-	" NERDTress File highlighting
-	function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-		exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='.  a:guifg
-		exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-	endfunction
+		" NERDTress File highlighting
+		function! NERDTreeHighlightFile(extension, fg, bg,)
+			exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='.  a:fg
+			exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+		endfunction
 
-	call NERDTreeHighlightFile('jade', 'green', 'none', 'green', 'none')
-	call NERDTreeHighlightFile('md', 'blue', 'none', '#6699CC', 'none')
-	call NERDTreeHighlightFile('config', 'yellow', 'none', '#d8a235', 'none')
-	call NERDTreeHighlightFile('conf', 'yellow', 'none', '#d8a235', 'none')
-	call NERDTreeHighlightFile('json', 'green', 'none', '#d8a235', 'none')
-	call NERDTreeHighlightFile('html', 'yellow', 'none', '#d8a235', 'none')
-	call NERDTreeHighlightFile('css', 'cyan', 'none', '#5486C0', 'none')
-	call NERDTreeHighlightFile('scss', 'cyan', 'none', '#5486C0', 'none')
-	call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', 'none')
-	call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', 'none')
-	call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', 'none')
-	call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'none')
-	call NERDTreeHighlightFile('gitconfig', 'black', 'none', '#686868', 'none')
-	call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
+		call NERDTreeHighlightFile('md', 'blue', 'none')
+		call NERDTreeHighlightFile('ds_store', 'black', 'none')
+		call NERDTreeHighlightFile('gitconfig', 'black', 'none')
+		call NERDTreeHighlightFile('gitignore', 'gray', 'none')
 
-	"Set cursorline in normal mode
-	set cursorline
-	autocmd InsertEnter * set nocursorline
-	autocmd InsertLeave * set cursorline
-	autocmd BufEnter * set cursorline
-	autocmd BufLeave * set nocursorline
+		"Set cursorline in normal mode
+		set cursorline
+		autocmd InsertEnter * set nocursorline
+		autocmd InsertLeave * set cursorline
+		autocmd BufEnter * set cursorline
+		autocmd BufLeave * set nocursorline
+		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+	" }}}
+	" Airline {{{
+
+	" }}}
 " }}}
