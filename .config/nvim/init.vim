@@ -172,4 +172,11 @@
 	call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', 'none')
 	call NERDTreeHighlightFile('gitconfig', 'black', 'none', '#686868', 'none')
 	call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#7F7F7F', 'none')
+
+	"Set cursorline in normal mode
+	set cursorline
+	autocmd InsertEnter * set nocursorline
+	autocmd InsertLeave * set cursorline
+	autocmd BufEnter * set cursorline
+	autocmd BufLeave * set nocursorline
 " }}}
