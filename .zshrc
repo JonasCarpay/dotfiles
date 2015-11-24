@@ -25,7 +25,7 @@ alias spa='spotify play album'
 alias lmk='latexmk -pvc -interaction=nonstopmode'
 alias lmc='latexmk -c'
 alias eclim='~/Applications/Eclipse.app/Contents/Eclipse/eclimd'
-alias z=cd
+alias c=cd
 
 ## FUNCTIONS
 function chpwd() {
