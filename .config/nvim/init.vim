@@ -106,7 +106,7 @@
 	nnoremap <Leader>w :wa<CR>
 	nnoremap <Leader>vs <C-w>v<C-w>l
 	nnoremap <Leader>hs <C-w>s<C-w>j
-	nnoremap <Leader>n :NERDTree<CR>
+	nnoremap <Leader>n :NERDTreeToggle<CR>
 
 	" Split navigation
 	nnoremap <Leader>h <C-w>h
@@ -147,9 +147,8 @@
 	autocmd FileType vim setlocal foldlevel=0
 " }}}
 " NERDTree {{{
-	map <C-\> :NERDTreeToggle<CR>
 	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && !empty(glob(".git")) | NERDTree | endif
 	let NERDTreeShowHidden=1
 
 	" NERDTress File highlighting
