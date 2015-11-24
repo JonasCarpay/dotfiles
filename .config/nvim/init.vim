@@ -29,6 +29,10 @@
 		NeoBundleFetch 'Shougo/neobundle.vim'
 	" Boilerplate }}}
 
+		" Helpers
+		  NeoBundle 'tpope/vim-unimpaired'
+		  NeoBundle 'tpope/vim-repeat'
+
 		" Git helpers
 		  NeoBundle 'tpope/vim-fugitive'
 		  NeoBundle 'airblade/vim-gitgutter'
@@ -37,15 +41,37 @@
 		  NeoBundle 'scrooloose/nerdtree'
 		  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 		  NeoBundle 'ryanoasis/vim-devicons'
+		  NeoBundle 'tpope/vim-eunuch'
+		  NeoBundle 'kien/ctrlp.vim'
 
 		" Syntax and highlighting
 		  NeoBundle 'altercation/vim-colors-solarized'
-		  NeoBundle 'Shougo/deoplete.nvim'
-			let g:deoplete#enable_at_startup = 1
 		  NeoBundle 'benekastah/neomake'
+		  NeoBundle 'Valloric/YouCompleteMe'
+		  let g:EclimCompletionMethod = 'omnifunc'
+		  NeoBundle 'ntpeters/vim-better-whitespace'
+
+		" Editing
+		  NeoBundle 'tpope/vim-surround'
+		  NeoBundle 'Lokaltog/vim-easymotion'
+		  NeoBundle 'junegunn/vim-easy-align'
+		  NeoBundle 'SirVer/ultisnips'
+		  let g:UltiSnipsUsePythonVersion = 2
+		  NeoBundle 'honza/vim-snippets'
+		  NeoBundle 'tpope/vim-sleuth'
+		  NeoBundle 'michaeljsmith/vim-indent-object'
+
+		" Language-specific
+		  NeoBundle 'neovimhaskell/haskell-vim'
+		  NeoBundle 'enomsg/vim-haskellConcealPlus'
+		  NeoBundle 'mattn/emmet-vim'
+		  NeoBundle 'Slava/vim-spacebars'
 
 		" Other
 		  NeoBundle 'bling/vim-airline'
+		  NeoBundle 'marijnh/tern_for_vim'
+		  NeoBundle 'jeetsukumaran/vim-indentwise'
+		  NeoBundle 'jeetsukumaran/vim-buffergator'
 		  
 	" Boilerplate {{{
 		" Required:
