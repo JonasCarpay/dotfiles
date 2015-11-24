@@ -171,7 +171,7 @@
 		autocmd BufLeave * set nocursorline
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 	" }}}
-	" Airline {{{
-
+	" Other {{{
+	let g:airline_mode_map = { '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R', 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V', 's'  : 'S', 'S'  : 'S', '' : 'S', }
 	" }}}
 " }}}
