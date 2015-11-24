@@ -85,23 +85,62 @@
 " NeoBundle }}}
 " System settings {{{
 	syntax enable
+	set number
+	set wrap nolist linebreak breakindent
+	set incsearch hlsearch ignorecase smartcase
 	set background=dark
+	let g:tex_flavor = "latex"
 	colorscheme solarized
 	let g:airline_powerline_fonts = 1
 " }}}
 " Key bindings {{{
-	let mapleader = ','
-	nnoremap <space> za
+	let mapleader = "\<space>"
 	inoremap hj <esc>
 	vnoremap hj <esc>
+	inoremap HJ <esc>
+	inoremap Hj <esc>
+
+	nnoremap <Leader>ch :nohl<CR>
+	nnoremap <Leader>w :wa<CR>
+	nnoremap <Leader>vs <C-w>v<C-w>l
+	nnoremap <Leader>hs <C-w>s<C-w>j
+	nnoremap <Leader>n :NERDTree<CR>
+
+	" Split navigation
+	nnoremap <Leader>h <C-w>h
+	nnoremap <Leader>j <C-w>j
+	nnoremap <Leader>k <C-w>k
+	nnoremap <Leader>l <C-w>l
+	" Split position
+	nnoremap <Leader>H <C-w>H
+	nnoremap <Leader>J <C-w>J
+	nnoremap <Leader>K <C-w>K
+	nnoremap <Leader>L <C-w>L
+
+	" Git/gutter/fugitive
+	nnoremap <Leader>gg :GitGutterToggle<CR>
+	nnoremap <Leader>gs :Gstatus<CR>
+	nnoremap <Leader>gc :Gcommit<CR>
+	nnoremap <Leader>gd :Gdiff<CR>
+
+	" Easy-align
+	vmap <Enter> <Plug>(LiveEasyAlign)
+
+	" Ultisnips
+	let g:UltiSnipsExpandTrigger="<c-c>"
+	let g:UltiSnipsJumpForwardTrigger="<c-b>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 	" Remaps {{{
 		vnoremap > >gv
 		vnoremap < <gv
 		nnoremap Q <nop>
 		nnoremap , za
+		nnoremap j gj
+		nnoremap k gk
 	" Remaps }}}
 " Key bindings }}}
-" Autocmds {{{
+" Autocmds and functions {{{
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal foldlevel=0
 " }}}
