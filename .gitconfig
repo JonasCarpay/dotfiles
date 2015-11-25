@@ -1,0 +1,7 @@
+[core]
+	editor = nvim
+[push]
+	default = simple
+[user]
+	name = Jonas Carpay
+	email = jonascarpay@gmail.com
