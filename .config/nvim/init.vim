@@ -145,6 +145,7 @@
 " Autocmds and functions {{{
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal foldlevel=0
+	autocmd! BufWritePost * Neomake
 " }}}
 " Plugin-specific {{{
 	" NERDTree {{{
