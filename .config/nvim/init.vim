@@ -121,7 +121,7 @@
 	nnoremap <Leader>L <C-w>L
 
 	" Git/gutter/fugitive
-	nnoremap <Leader>gg :GitGutterToggle<CR>
+	nnoremap <Leader>gt :GitGutterToggle<CR>
 	nnoremap <Leader>gs :Gstatus<CR>
 	nnoremap <Leader>gc :Gcommit<CR>
 	nnoremap <Leader>gd :Gdiff<CR>
