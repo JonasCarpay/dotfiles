@@ -37,3 +37,5 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 eval `/usr/libexec/path_helper -s`
 
 screenfetch
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

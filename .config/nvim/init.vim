@@ -42,7 +42,8 @@
 		  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 		  NeoBundle 'ryanoasis/vim-devicons'
 		  NeoBundle 'tpope/vim-eunuch'
-		  NeoBundle 'kien/ctrlp.vim'
+		  NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
+		  NeoBundle 'junegunn/fzf.vim'
 
 		" Syntax and highlighting
 		  NeoBundle 'altercation/vim-colors-solarized'
@@ -172,7 +173,19 @@
 		autocmd BufLeave * set nocursorline
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 	" }}}
+	" FZF {{{
+		map  <leader>ff :FZF<CR>
+		map  <leader>fg :Ag<CR>
+
+		vmap <leader>fw "my:Ag <C-r>m<CR>
+		nmap <leader>fw :Ag <C-r><C-w><CR>
+
+		map  <leader>ah :History<CR>
+		tmap <leader>fh <c-\><c-n>:History<CR>
+
+		map  <leader>fl :Lines<CR>
+	" }}}
 	" Other {{{
-	let g:airline_mode_map = { '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R', 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V', 's'  : 'S', 'S'  : 'S', '' : 'S', }
+		let g:airline_mode_map = { '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R', 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V', 's'  : 'S', 'S'  : 'S', '' : 'S', }
 	" }}}
 " }}}
