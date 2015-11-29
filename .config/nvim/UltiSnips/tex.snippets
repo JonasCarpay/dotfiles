@@ -1,0 +1,52 @@
+snippet em
+\emph{$1}$0
+endsnippet
+
+snippet SI
+\SI{$1}{$2}$0
+endsnippet
+
+snippet gentemp "General LaTeX template" b
+\documentclass[
+    oneside,
+    a4paper,
+    9pt,
+]{memoir}
+
+\title{${1}}
+\author{${2:Jonas Carpay}}
+
+\usepackage[$3]{babel}
+\usepackage{mathspec}
+\usepackage{booktabs}
+
+
+\setmainfont{Bembo Book MT Pro}
+
+\begin{document}
+${VISUAL}$0
+\end{document}
+endsnippet
+
+snippet lstsetup "Default listings setup"
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\lstset{%
+    language=$1,
+    basicstyle=\small\ttfamily,
+    keywordstyle=[1]\color{BrickRed}\bfseries,
+    commentstyle=\color{gray}\small,
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+    xleftmargin=\parindent,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+}
+$0
+endsnippet
+
+snippet upto "Replaces n by a count up to n"
+`!p snip.rv = t[2].replace("n","1") + t[1] + " " +t[2].replace("n", "2") + t[1] + " \ldots"` ${1:,} ${2:f(n)}
+endsnippet
