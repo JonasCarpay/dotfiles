@@ -109,17 +109,6 @@
 	nnoremap <Leader>hs <C-w>s<C-w>j
 	nnoremap <Leader>n :NERDTreeToggle<CR>
 
-	" Split navigation
-	nnoremap <Leader>h <C-w>h
-	nnoremap <Leader>j <C-w>j
-	nnoremap <Leader>k <C-w>k
-	nnoremap <Leader>l <C-w>l
-	" Split position
-	nnoremap <Leader>H <C-w>H
-	nnoremap <Leader>J <C-w>J
-	nnoremap <Leader>K <C-w>K
-	nnoremap <Leader>L <C-w>L
-
 	" Git/gutter/fugitive
 	nnoremap <Leader>gt :GitGutterToggle<CR>
 	nnoremap <Leader>gs :Gstatus<CR>
