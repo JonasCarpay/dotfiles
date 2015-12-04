@@ -39,7 +39,7 @@
 
 		" File navigation
 		  NeoBundle 'scrooloose/nerdtree'
-		  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+		  NeoBundle 'albfan/nerdtree-git-plugin'
 		  NeoBundle 'ryanoasis/vim-devicons'
 		  NeoBundle 'tpope/vim-eunuch'
 		  NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
