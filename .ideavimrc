@@ -3,3 +3,5 @@ vnoremap hj <esc>
 inoremap HJ <esc>
 inoremap Hj <esc>
 
+vnoremap > >gv
+vnoremap < <gv
