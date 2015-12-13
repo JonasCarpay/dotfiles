@@ -73,6 +73,7 @@
 		  NeoBundle 'marijnh/tern_for_vim'
 		  NeoBundle 'jeetsukumaran/vim-indentwise'
 		  NeoBundle 'jeetsukumaran/vim-buffergator'
+		  NeoBundle 'mhinz/vim-startify'
 
 	" Boilerplate {{{
 		" Required:
