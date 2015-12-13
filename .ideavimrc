@@ -1,3 +1,5 @@
+set ignorecase smartcase incsearch
+
 inoremap hj <esc>
 vnoremap hj <esc>
 inoremap HJ <esc>
