@@ -5,5 +5,7 @@ vnoremap hj <esc>
 inoremap HJ <esc>
 inoremap Hj <esc>
 
+inoremap JJ <esc>A;<CR>
+
 vnoremap > >gv
 vnoremap < <gv
