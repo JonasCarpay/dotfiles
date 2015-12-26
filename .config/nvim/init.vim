@@ -73,7 +73,6 @@
 		  NeoBundle 'marijnh/tern_for_vim'
 		  NeoBundle 'jeetsukumaran/vim-indentwise'
 		  NeoBundle 'jeetsukumaran/vim-buffergator'
-		  NeoBundle 'mhinz/vim-startify'
 
 	" Boilerplate {{{
 		" Required:
@@ -141,7 +140,6 @@
 " Plugin-specific {{{
 	" NERDTree {{{
 		autocmd StdinReadPre * let s:std_in=1
-		autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && !empty(glob(".git")) | NERDTree | endif
 		let NERDTreeShowHidden=1
 
 		" NERDTress File highlighting
