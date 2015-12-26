@@ -4,6 +4,7 @@ inoremap hj <esc>
 vnoremap hj <esc>
 inoremap HJ <esc>
 inoremap Hj <esc>
+inoremap P<CR> {<CR>
 
 inoremap <C-j> <esc>A;<CR>
 inoremap <C-l> <esc>A {<CR>
