@@ -89,6 +89,7 @@
 	set number
 	set wrap nolist linebreak breakindent
 	set incsearch hlsearch ignorecase smartcase
+	set expandtab tabstop=4 shiftwidth=4
 	set background=dark
 	let g:tex_flavor = "latex"
 	colorscheme solarized
