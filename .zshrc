@@ -26,6 +26,7 @@ alias lmk='latexmk -pvc -interaction=nonstopmode'
 alias lmc='latexmk -c'
 alias eclim='~/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 alias c=cd
+alias p=python3
 
 ## FUNCTIONS
 function chpwd() {
@@ -35,8 +36,6 @@ function chpwd() {
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 eval `/usr/libexec/path_helper -s`
-
-screenfetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
