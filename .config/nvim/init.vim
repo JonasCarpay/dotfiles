@@ -73,6 +73,7 @@
 		  NeoBundle 'marijnh/tern_for_vim'
 		  NeoBundle 'jeetsukumaran/vim-indentwise'
 		  NeoBundle 'jeetsukumaran/vim-buffergator'
+		  NeoBundle 'kassio/neoterm'
 
 	" Boilerplate {{{
 		" Required:
@@ -109,6 +110,7 @@
 	nnoremap <Leader>vs <C-w>v<C-w>l
 	nnoremap <Leader>hs <C-w>s<C-w>j
 	nnoremap <Leader>n :NERDTreeToggle<CR>
+	nnoremap <Leader>m :T make<CR>
 
 	" Git/gutter/fugitive
 	nnoremap <Leader>gt :GitGutterToggle<CR>
