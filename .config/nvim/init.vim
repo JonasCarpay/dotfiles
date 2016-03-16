@@ -86,7 +86,7 @@
 	" Boilerplate }}}
 " NeoBundle }}}
 " System settings {{{
-	syntax enable
+	syntax manual
 	set number
 	set wrap nolist linebreak breakindent
 	set incsearch hlsearch ignorecase smartcase
@@ -111,6 +111,7 @@
 	nn <Leader>hs <C-w>s<C-w>j
 	nn <Leader>n :NERDTreeToggle<CR>
 	nn <Leader>m :T make<CR>
+	nn <C-s> :if &syntax=="on" <Bar> set syntax=off <Bar> else <Bar> set syntax=on <Bar> endif<CR>
 
 	" Git/gutter/fugitive
 	nn <Leader>gt :GitGutterToggle<CR>
@@ -143,6 +144,7 @@
 	autocmd FileType vim setlocal foldlevel=0
 	autocmd! BufWritePost * Neomake
 " }}}
+
 " Plugin-specific {{{
 	" NERDTree {{{
 		autocmd StdinReadPre * let s:std_in=1
