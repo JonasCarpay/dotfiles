@@ -69,7 +69,8 @@
 		  NeoBundle 'Slava/vim-spacebars'
 
 		" Other
-		  NeoBundle 'bling/vim-airline'
+		  NeoBundle 'vim-airline/vim-airline'
+		  NeoBundle 'vim-airline/vim-airline-themes'
 		  NeoBundle 'marijnh/tern_for_vim'
 		  NeoBundle 'jeetsukumaran/vim-indentwise'
 		  NeoBundle 'jeetsukumaran/vim-buffergator'
