@@ -100,23 +100,23 @@
 " }}}
 " Key bindings {{{
 	let mapleader = "\<space>"
-	inoremap hj <esc>
-	vnoremap hj <esc>
-	inoremap HJ <esc>
-	inoremap Hj <esc>
+	ino hj <esc>
+	vn hj <esc>
+	ino HJ <esc>
+	ino Hj <esc>
 
-	nnoremap <Leader>ch :nohl<CR>
-	nnoremap <Leader>w :wa<CR>
-	nnoremap <Leader>vs <C-w>v<C-w>l
-	nnoremap <Leader>hs <C-w>s<C-w>j
-	nnoremap <Leader>n :NERDTreeToggle<CR>
-	nnoremap <Leader>m :T make<CR>
+	nn <Leader>ch :nohl<CR>
+	nn <Leader>w :wa<CR>
+	nn <Leader>vs <C-w>v<C-w>l
+	nn <Leader>hs <C-w>s<C-w>j
+	nn <Leader>n :NERDTreeToggle<CR>
+	nn <Leader>m :T make<CR>
 
 	" Git/gutter/fugitive
-	nnoremap <Leader>gt :GitGutterToggle<CR>
-	nnoremap <Leader>gs :Gstatus<CR>
-	nnoremap <Leader>gc :Gcommit<CR>
-	nnoremap <Leader>gd :Gdiff<CR>
+	nn <Leader>gt :GitGutterToggle<CR>
+	nn <Leader>gs :Gstatus<CR>
+	nn <Leader>gc :Gcommit<CR>
+	nn <Leader>gd :Gdiff<CR>
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
@@ -126,13 +126,16 @@
 	let g:UltiSnipsJumpForwardTrigger="<c-b>"
 	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+	" Neoterm
+	tnoremap hj <C-\><C-n>
+
 	" Remaps {{{
-		vnoremap > >gv
-		vnoremap < <gv
-		nnoremap Q <nop>
-		nnoremap , za
-		nnoremap j gj
-		nnoremap k gk
+		vn > >gv
+		vn < <gv
+		nn Q <nop>
+		nn , za
+		nn j gj
+		nn k gk
 	" Remaps }}}
 " Key bindings }}}
 " Autocmds and functions {{{
