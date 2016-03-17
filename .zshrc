@@ -11,7 +11,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/loc
 source $ZSH/oh-my-zsh.sh
 
 ## ALIASES
-alias vim=nvim
 alias vi=nvim
 alias v=nvim
 alias dc="cd ~/Documents/"

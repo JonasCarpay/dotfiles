@@ -87,7 +87,8 @@
 	" Boilerplate }}}
 " NeoBundle }}}
 " System settings {{{
-	syntax manual
+	syntax enable
+	set syntax=on
 	set number
 	set wrap nolist linebreak breakindent
 	set incsearch hlsearch ignorecase smartcase
@@ -144,6 +145,7 @@
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal foldlevel=0
 	autocmd! BufWritePost * Neomake
+	autocmd FileType * set syntax=on " To allow syntax highlighting toggling
 " }}}
 
 " Plugin-specific {{{
