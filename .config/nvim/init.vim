@@ -51,6 +51,7 @@
 		  NeoBundle 'Valloric/YouCompleteMe'
 		  let g:EclimCompletionMethod = 'omnifunc'
 		  NeoBundle 'ntpeters/vim-better-whitespace'
+		  NeoBundle 'rust-lang/rust'
 
 		" Editing
 		  NeoBundle 'tpope/vim-surround'
