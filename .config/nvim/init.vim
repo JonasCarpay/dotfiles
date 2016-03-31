@@ -104,9 +104,13 @@
 " Key bindings {{{
 	let mapleader = "\<space>"
 	ino hj <esc>
-	vn hj <esc>
+	vn  hj <esc>
 	ino HJ <esc>
 	ino Hj <esc>
+	ino jh <esc>
+	vn  jh <esc>
+	ino JH <esc>
+	ino Jh <esc>
 
 	nn <Leader>ch :nohl<CR>
 	nn <Leader>w :wa<CR>
