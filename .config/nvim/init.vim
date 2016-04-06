@@ -126,6 +126,11 @@
 	nn <Leader>gc :Gcommit<CR>
 	nn <Leader>gd :Gdiff<CR>
 
+	" Language-specific
+	"" Haskell
+	autocmd FileType haskell ino >> <space>-><space>
+	autocmd FileType haskell ino << <space><-<space>
+
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
 
