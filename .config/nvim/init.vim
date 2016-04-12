@@ -64,6 +64,10 @@
 	let g:airline_powerline_fonts = 1
 	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+	let g:deoplete#enable_at_startup = 1
+
+	let g:haskellmode_completion_ghc = 0
+	autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " }}}
 " Key bindings {{{
 	let mapleader = "\<space>"
@@ -94,6 +98,9 @@
 	"" Haskell
 	autocmd FileType haskell ino >> <space>-><space>
 	autocmd FileType haskell ino << <space><-<space>
+	nn <Leader>hi :GhcModTypeInsert<CR>
+	nn <Leader>ht :GhcModType<CR>
+	nn <Leader>hc :GhcModTypeClear<CR>
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
@@ -113,6 +120,12 @@
 		nn , za
 		nn j gj
 		nn k gk
+		" remap CR to not just close autocomplete window
+		inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+		function! s:my_cr_function() abort
+		  return deoplete#mappings#close_popup() . "\<CR>"
+		endfunction
+
 	" Remaps }}}
 " Key bindings }}}
 " Autocmds and functions {{{
@@ -121,7 +134,6 @@
 	autocmd! BufWritePost * Neomake
 	autocmd FileType * set syntax=on " To allow syntax highlighting toggling
 " }}}
-
 " Plugin-specific {{{
 	" NERDTree {{{
 		autocmd StdinReadPre * let s:std_in=1
