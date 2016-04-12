@@ -1,3 +1,6 @@
+local battery = require("hs.battery")
+local alert   = require("hs.alert")
+
 local modalKey = {"alt"}
 
 hs.hotkey.bind(modalKey, "r", function()
@@ -20,8 +23,6 @@ for key in pairs(focusKeys) do
 	end)
 end
 
-local battery = require("hs.battery")
-local alert   = require("hs.alert")
 
 local PreviousPowerSource = battery.powerSource()
 
