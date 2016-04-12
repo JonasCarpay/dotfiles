@@ -74,7 +74,7 @@ let g:emmet_html5 = 1
 let g:tex_flavor = "latex"
 set wildignore+=*.aux,*.out,*.bbl,*.blg,*.fdb_latexmk,*.fls,*.log,*.pdf,*.run.xml,*.pyc
 colorscheme solarized
-set background=light
+set background=dark
 let g:airline_powerline_fonts = 1
 let g:mustache_abbreviations = 1
 set laststatus=2

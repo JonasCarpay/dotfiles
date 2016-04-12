@@ -4,9 +4,11 @@ ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git brew z sudo)
+export EDITOR=nvim
 
 ## PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/local/texlive/2014/bin/x86_64-darwin:/usr/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbin"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
@@ -26,6 +28,7 @@ alias lmc='latexmk -c'
 alias eclim='~/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 alias c=cd
 alias p=python3
+alias rn=ranger
 
 ## FUNCTIONS
 function chpwd() {
