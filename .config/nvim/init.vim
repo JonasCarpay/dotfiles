@@ -1,91 +1,55 @@
-" NeoBundle  {{{
-	" Boilerplate {{{
-		" If vundle is not installed, do it first
-		let bundleExists = 1
-		if (!isdirectory(expand("$HOME/.nvim/bundle/neobundle.vim")))
-			call system(expand("mkdir -p $HOME/.nvim/bundle"))
-			call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.nvim/bundle/neobundle.vim"))
-			let bundleExists = 0
-		endif
-
-		if 0 | endif
-
-		if has('vim_starting')
-			if &compatible
-				" Be iMproved
-				set nocompatible
-			endif
-
-			" Required:
-			set runtimepath+=~/.nvim/bundle/neobundle.vim/
-			" set runtimepath+=~/.nvim/bundle/bolt.vim/
-		endif
-
-		" Required:
-		call neobundle#begin(expand('~/.nvim/bundle/'))
-
-		" Let NeoBundle manage NeoBundle
-		" Required:
-		NeoBundleFetch 'Shougo/neobundle.vim'
-	" Boilerplate }}}
-
+" Vim-plug  {{{
+	call plug#begin('~/.config/nvim/plugged')
 		" Helpers
-		  NeoBundle 'tpope/vim-unimpaired'
-		  NeoBundle 'tpope/vim-repeat'
+		  Plug 'tpope/vim-unimpaired'
+		  Plug 'tpope/vim-repeat'
+		  Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 		" Git helpers
-		  NeoBundle 'tpope/vim-fugitive'
-		  NeoBundle 'airblade/vim-gitgutter'
+		  Plug 'tpope/vim-fugitive'
+		  Plug 'airblade/vim-gitgutter'
 
 		" File navigation
-		  NeoBundle 'scrooloose/nerdtree'
-		  NeoBundle 'albfan/nerdtree-git-plugin'
-		  NeoBundle 'ryanoasis/vim-devicons'
-		  NeoBundle 'tpope/vim-eunuch'
-		  NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf' }
-		  NeoBundle 'junegunn/fzf.vim'
+		  Plug 'scrooloose/nerdtree'
+		  Plug 'albfan/nerdtree-git-plugin'
+		  Plug 'ryanoasis/vim-devicons'
+		  Plug 'tpope/vim-eunuch'
+		  Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+		  Plug 'junegunn/fzf.vim'
 
 		" Syntax and highlighting
-		  NeoBundle 'altercation/vim-colors-solarized'
-		  NeoBundle 'benekastah/neomake'
-		  NeoBundle 'Valloric/YouCompleteMe'
-		  let g:EclimCompletionMethod = 'omnifunc'
-		  NeoBundle 'ntpeters/vim-better-whitespace'
-		  NeoBundle 'rust-lang/rust'
+		  Plug 'altercation/vim-colors-solarized'
+		  Plug 'benekastah/neomake'
+		  Plug 'Shougo/deoplete.nvim'
+		  Plug 'ntpeters/vim-better-whitespace'
 
 		" Editing
-		  NeoBundle 'tpope/vim-surround'
-		  NeoBundle 'Lokaltog/vim-easymotion'
-		  NeoBundle 'junegunn/vim-easy-align'
-		  NeoBundle 'SirVer/ultisnips'
+		  Plug 'tpope/vim-surround'
+		  Plug 'Lokaltog/vim-easymotion'
+		  Plug 'junegunn/vim-easy-align'
+		  Plug 'SirVer/ultisnips'
 		  let g:UltiSnipsUsePythonVersion = 2
-		  NeoBundle 'honza/vim-snippets'
-		  NeoBundle 'tpope/vim-sleuth'
-		  NeoBundle 'michaeljsmith/vim-indent-object'
+		  Plug 'honza/vim-snippets'
+		  Plug 'tpope/vim-sleuth'
+		  Plug 'michaeljsmith/vim-indent-object'
+		  Plug 'ervandew/supertab'
+		  let g:SuperTabDefaultCompletionType="<c-n>"
 
 		" Language-specific
-		  NeoBundle 'neovimhaskell/haskell-vim'
-		  NeoBundle 'enomsg/vim-haskellConcealPlus'
-		  NeoBundle 'mattn/emmet-vim'
-		  NeoBundle 'Slava/vim-spacebars'
+		  Plug 'neovimhaskell/haskell-vim'
+		  Plug 'eagletmt/ghcmod-vim'
+		  Plug 'eagletmt/neco-ghc'
+		  Plug 'mattn/emmet-vim'
+		  Plug 'Slava/vim-spacebars'
 
 		" Other
-		  NeoBundle 'vim-airline/vim-airline'
-		  NeoBundle 'vim-airline/vim-airline-themes'
-		  NeoBundle 'marijnh/tern_for_vim'
-		  NeoBundle 'jeetsukumaran/vim-indentwise'
-		  NeoBundle 'jeetsukumaran/vim-buffergator'
-		  NeoBundle 'kassio/neoterm'
+		  Plug 'vim-airline/vim-airline'
+		  Plug 'vim-airline/vim-airline-themes'
+		  Plug 'jeetsukumaran/vim-indentwise'
+		  Plug 'jeetsukumaran/vim-buffergator'
+		  Plug 'kassio/neoterm'
 
-	" Boilerplate {{{
-		" Required:
-		call neobundle#end()
-		filetype plugin indent on
-		NeoBundleCheck
-		if bundleExists == 0
-			echo "Installing Bundles, ignore errors"
-		endif
-	" Boilerplate }}}
+	call plug#end()
 " NeoBundle }}}
 " System settings {{{
 	syntax enable
