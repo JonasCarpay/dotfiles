@@ -1,5 +1,10 @@
+" Neovim configuration
+
 " Vim-plug  {{{
 	call plug#begin('~/.config/nvim/plugged')
+	  function! DoRemote(arg)
+		  UpdateRemotePlugins
+	  endfunction
 		" Helpers
 		  Plug 'tpope/vim-unimpaired'
 		  Plug 'tpope/vim-repeat'
@@ -19,8 +24,14 @@
 
 		" Syntax and highlighting
 		  Plug 'altercation/vim-colors-solarized'
+		  Plug 'scrooloose/nerdcommenter'
 		  Plug 'benekastah/neomake'
-		  Plug 'Shougo/deoplete.nvim'
+		  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+			  let g:deoplete#enable_at_startup = 1
+			  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+			  function! s:my_cr_function() abort
+				  return deoplete#mappings#close_popup() . "\<CR>"
+			  endfunction
 		  Plug 'ntpeters/vim-better-whitespace'
 
 		" Editing
@@ -38,6 +49,7 @@
 		" Language-specific
 		  Plug 'neovimhaskell/haskell-vim'
 		  Plug 'eagletmt/ghcmod-vim'
+		  let g:ghcmod_ghc_options = ['-idir1', '-idir2']
 		  Plug 'eagletmt/neco-ghc'
 		  Plug 'mattn/emmet-vim'
 		  Plug 'Slava/vim-spacebars'
@@ -64,7 +76,6 @@
 	let g:airline_powerline_fonts = 1
 	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-	let g:deoplete#enable_at_startup = 1
 
 	let g:haskellmode_completion_ghc = 0
 	autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -79,6 +90,7 @@
 	vn  jh <esc>
 	ino JH <esc>
 	ino Jh <esc>
+	ino jj <CR>
 
 	nn <Leader>ch :nohl<CR>
 	nn <Leader>w :wa<CR>
@@ -98,9 +110,11 @@
 	"" Haskell
 	autocmd FileType haskell ino >> <space>-><space>
 	autocmd FileType haskell ino << <space><-<space>
-	nn <Leader>hi :GhcModTypeInsert<CR>
-	nn <Leader>ht :GhcModType<CR>
-	nn <Leader>hc :GhcModTypeClear<CR>
+	autocmd FileType haskell nn <Leader>hi :GhcModTypeInsert<CR>
+	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
+	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
+	autocmd FileType haskell nn <Leader>hr :T runghc %<CR>
+	autocmd FileType haskell nn <Leader>hg :! hoogle 
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
@@ -120,11 +134,6 @@
 		nn , za
 		nn j gj
 		nn k gk
-		" remap CR to not just close autocomplete window
-		inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-		function! s:my_cr_function() abort
-		  return deoplete#mappings#close_popup() . "\<CR>"
-		endfunction
 
 	" Remaps }}}
 " Key bindings }}}
@@ -172,5 +181,22 @@
 	" }}}
 	" Other {{{
 		let g:airline_mode_map = { '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R', 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V', 's'  : 'S', 'S'  : 'S', '' : 'S', }
+	" }}}
+	" Haskell {{{
+		let g:haskell_enable_quantification = 1
+		let g:haskell_enable_quantification = 1
+		let g:haskell_enable_recursivedo = 1
+		let g:haskell_enable_arrowsyntax = 1
+		let g:haskell_enable_pattern_synonyms = 1
+		let g:haskell_enable_typeroles = 1
+		let g:haskell_enable_static_pointers = 1
+		let g:haskell_indent_if = 3
+		let g:haskell_indent_case = 2
+		let g:haskell_indent_let = 4
+		let g:haskell_indent_where = 6
+		let g:haskell_indent_do = 3
+		let g:haskell_indent_in = 1
+		let g:haskell_indent_guard = 2
+		let g:cabal_indent_section = 2
 	" }}}
 " }}}
