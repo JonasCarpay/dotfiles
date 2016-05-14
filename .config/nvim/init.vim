@@ -51,6 +51,7 @@
 		  Plug 'eagletmt/ghcmod-vim'
 		  let g:ghcmod_ghc_options = ['-idir1', '-idir2']
 		  Plug 'eagletmt/neco-ghc'
+		  let g:necoghc_enable_detailed_browse = 1
 		  Plug 'mattn/emmet-vim'
 		  Plug 'Slava/vim-spacebars'
 
@@ -109,11 +110,17 @@
 	" Language-specific
 	"" Haskell
 	autocmd FileType haskell ino >> <space>-><space>
+	autocmd FileType haskell ino +> <space>=><space>
 	autocmd FileType haskell ino << <space><-<space>
+	autocmd FileType haskell ino >+ <space>>>=<space>
+	autocmd FileType haskell ino >>> <space>>><space>
+	autocmd FileType haskell ino $$ <space><$><space>
+	autocmd FileType haskell ino ** <space><*><space>
 	autocmd FileType haskell nn <Leader>hi :GhcModTypeInsert<CR>
 	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
 	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
-	autocmd FileType haskell nn <Leader>hr :T runghc %<CR>
+	autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
+	autocmd FileType haskell nn <Leader>hr :T cabal run<CR>
 	autocmd FileType haskell nn <Leader>hg :! hoogle 
 
 	" Easy-align
