@@ -84,22 +84,19 @@
 " Key bindings {{{
 	let mapleader = "\<space>"
 	ino hj <esc>
-	vn  hj <esc>
 	ino HJ <esc>
 	ino Hj <esc>
 	ino jh <esc>
-	vn  jh <esc>
 	ino JH <esc>
 	ino Jh <esc>
-	ino jj <CR>
+	imap jj <CR>
 
 	nn <Leader>ch :nohl<CR>
 	nn <Leader>w :wa<CR>
-	nn <Leader>vs <C-w>v<C-w>l
-	nn <Leader>hs <C-w>s<C-w>j
 	nn <Leader>n :NERDTreeToggle<CR>
 	nn <Leader>m :T make<CR>
 	nn <C-s> :if &syntax=="on" <Bar> set syntax=off <Bar> else <Bar> set syntax=on <Bar> endif<CR>
+	vnoremap @ :norm@
 
 	" Git/gutter/fugitive
 	nn <Leader>gt :GitGutterToggle<CR>
@@ -120,8 +117,6 @@
 	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
 	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
 	autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
-	autocmd FileType haskell nn <Leader>hr :T cabal run<CR>
-	autocmd FileType haskell nn <Leader>hg :! hoogle 
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
