@@ -12,7 +12,7 @@
 # turn off the production of dvi and ps files, as in the following
 # code:
 
-$pdflatex = 'xelatex %O %S -shell-escape';
+$pdflatex = 'xelatex %O %S -shell-escape --enable-write18';
 $pdf_mode = 1;
 $postscript_mode = $dvi_mode = 0;
 $pdf_previewer = 'open -a skim';
