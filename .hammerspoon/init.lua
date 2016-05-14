@@ -10,10 +10,10 @@ end)
 
 local focusKeys = {
 	s='Safari',
-	c='Chromium',
+	c='Firefox',
 	t='iTerm',
 	p='Spotify',
-	m='Messages',
+	m='Telegram',
 	i='IntelliJ IDEA 15 CE',
 }
 
