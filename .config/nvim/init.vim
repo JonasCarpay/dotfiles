@@ -24,6 +24,7 @@
 
 		" Syntax and highlighting
 		  Plug 'altercation/vim-colors-solarized'
+		  Plug 'fcpg/vim-fahrenheit'
 		  Plug 'scrooloose/nerdcommenter'
 		  Plug 'benekastah/neomake'
 		  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
@@ -74,6 +75,7 @@
 	set background=dark
 	let g:tex_flavor = "latex"
 	colorscheme solarized
+	colorscheme fahrenheit
 	let g:airline_powerline_fonts = 1
 	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
