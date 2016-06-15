@@ -29,6 +29,9 @@
 		  Plug 'benekastah/neomake'
 		  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 			  let g:deoplete#enable_at_startup = 1
+			  let g:deoplete#enable_camel_case = 1
+			  let g:deoplete#max_abbr_width=0
+			  let g:deoplete#max_menu_width=0
 			  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 			  function! s:my_cr_function() abort
 				  return deoplete#mappings#close_popup() . "\<CR>"
@@ -40,12 +43,12 @@
 		  Plug 'Lokaltog/vim-easymotion'
 		  Plug 'junegunn/vim-easy-align'
 		  Plug 'SirVer/ultisnips'
-		  let g:UltiSnipsUsePythonVersion = 2
+			  let g:UltiSnipsUsePythonVersion = 2
 		  Plug 'honza/vim-snippets'
 		  Plug 'tpope/vim-sleuth'
 		  Plug 'michaeljsmith/vim-indent-object'
 		  Plug 'ervandew/supertab'
-		  let g:SuperTabDefaultCompletionType="<c-n>"
+			  let g:SuperTabDefaultCompletionType="<c-n>"
 
 		" Language-specific
 		  Plug 'neovimhaskell/haskell-vim'
