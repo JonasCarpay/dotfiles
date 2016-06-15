@@ -65,6 +65,7 @@
 		  Plug 'jeetsukumaran/vim-indentwise'
 		  Plug 'jeetsukumaran/vim-buffergator'
 		  Plug 'kassio/neoterm'
+		  Plug 'rizzatti/dash.vim'
 
 	call plug#end()
 " NeoBundle }}}
@@ -96,12 +97,18 @@
 	ino Jh <esc>
 	imap jj <CR>
 
+	nn <Leader>bd :bd<CR>
 	nn <Leader>ch :nohl<CR>
+	nn <Leader>yy mmggVG"*y'm
+	nn <Leader>yp :set paste<CR>"*p:set nopaste<CR>
 	nn <Leader>w :wa<CR>
 	nn <Leader>n :NERDTreeToggle<CR>
 	nn <Leader>m :T make<CR>
 	nn <C-s> :if &syntax=="on" <Bar> set syntax=off <Bar> else <Bar> set syntax=on <Bar> endif<CR>
 	vnoremap @ :norm@
+
+	" Dash-vim
+	nn <leader>d :Dash<CR>
 
 	" Git/gutter/fugitive
 	nn <Leader>gt :GitGutterToggle<CR>
