@@ -8,7 +8,7 @@ export EDITOR=nvim
 
 ## PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbin"
-export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
@@ -29,6 +29,9 @@ alias eclim='~/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 alias c=cd
 alias p=python3
 alias rn=ranger
+alias sb='stack build'
+alias si='stack install'
+alias se='stack exec'
 
 ## FUNCTIONS
 function chpwd() {

@@ -118,17 +118,19 @@
 
 	" Language-specific
 	"" Haskell
-	autocmd FileType haskell ino >> <space>-><space>
-	autocmd FileType haskell ino +> <space>=><space>
-	autocmd FileType haskell ino << <space><-<space>
-	autocmd FileType haskell ino >+ <space>>>=<space>
+	autocmd FileType haskell ino >>  <space>-><space>
+	autocmd FileType haskell ino +>  <space>=><space>
+	autocmd FileType haskell ino <<  <space><-<space>
+	autocmd FileType haskell ino >+  <space>>>=<space>
 	autocmd FileType haskell ino >>> <space>>><space>
-	autocmd FileType haskell ino $$ <space><$><space>
-	autocmd FileType haskell ino ** <space><*><space>
+	autocmd FileType haskell ino $$  <space><$><space>
+	autocmd FileType haskell ino ::  <space>::<space>
+	autocmd FileType haskell ino **  <space><*><space>
 	autocmd FileType haskell nn <Leader>hi :GhcModTypeInsert<CR>
 	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
 	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
 	autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
+	autocmd FileType haskell nn <Leader>hg :GhcModCheck<CR>
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
@@ -161,6 +163,7 @@
 	" NERDTree {{{
 		autocmd StdinReadPre * let s:std_in=1
 		let NERDTreeShowHidden=1
+		let NERDTreeQuitOnOpen=1
 
 		" NERDTress File highlighting
 		function! NERDTreeHighlightFile(extension, fg, bg,)
