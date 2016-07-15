@@ -93,13 +93,11 @@
 	ino hj <esc>
 	ino HJ <esc>
 	ino Hj <esc>
-	ino jh <esc>
-	ino JH <esc>
-	ino Jh <esc>
 	imap jj <CR>
 
+	nn <C-j> <C-w>}
 	nn <Leader>bd :bd<CR>
-	nn <Leader>ch :nohl<CR>
+	nn <Leader>ch :nohl<CR>:GhcModTypeClear<CR>
 	nn <Leader>yy mmggVG"*y'm
 	nn <Leader>yp :set paste<CR>"*p:set nopaste<CR>
 	nn <Leader>w :wa<CR>
@@ -129,7 +127,6 @@
 	autocmd FileType haskell ino **  <space><*><space>
 	autocmd FileType haskell nn <Leader>hi :GhcModTypeInsert<CR>
 	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
-	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
 	autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
 	autocmd FileType haskell nn <Leader>hc :GhcModCheck<CR>
 	autocmd FileType haskell nn <Leader>hf :Hrename 
@@ -189,6 +186,7 @@
 	" FZF {{{
 		map  <leader>ff :FZF<CR>
 		map  <leader>fg :Ag<CR>
+		map  <leader>ft :Tags<CR>
 
 		vmap <leader>fw "my:Ag <C-r>m<CR>
 		nmap <leader>fw :Ag <C-r><C-w><CR>
