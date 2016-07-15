@@ -52,6 +52,7 @@
 
 		" Language-specific
 		  Plug 'neovimhaskell/haskell-vim'
+		  Plug 'glittershark/vim-hare'
 		  Plug 'eagletmt/ghcmod-vim'
 		  let g:ghcmod_ghc_options = ['-idir1', '-idir2']
 		  Plug 'eagletmt/neco-ghc'
@@ -130,7 +131,8 @@
 	autocmd FileType haskell nn <Leader>ht :GhcModType<CR>
 	autocmd FileType haskell nn <Leader>hc :GhcModTypeClear<CR>
 	autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
-	autocmd FileType haskell nn <Leader>hg :GhcModCheck<CR>
+	autocmd FileType haskell nn <Leader>hc :GhcModCheck<CR>
+	autocmd FileType haskell nn <Leader>hf :Hrename 
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)
