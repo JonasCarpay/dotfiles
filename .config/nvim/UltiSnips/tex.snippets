@@ -1,5 +1,5 @@
 snippet em
-\emph{$1}$0
+\emph{${1}${VISUAL}}$0
 endsnippet
 
 snippet si
@@ -8,10 +8,9 @@ endsnippet
 
 snippet basic_template "Basic LaTeX template" b
 \documentclass[
-    oneside,
-    a4paper,
-    9pt,
-]{memoir}
+    paper=a4,
+    fontsize=9pt,
+]{scrartcl}
 
 \title{${1}}
 \author{${2:Jonas Carpay}}
@@ -23,6 +22,7 @@ snippet basic_template "Basic LaTeX template" b
 
 \setmainfont[Numbers=OldStyle]{Bembo Book MT Pro}
 \setmathsfont(Digits,Latin)[Scale=MatchLowercase]{Bembo Book MT Pro}
+\setmathrm{Bembo Book MT Pro}
 
 \begin{document}
 ${VISUAL}$0
