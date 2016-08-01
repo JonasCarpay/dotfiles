@@ -23,7 +23,6 @@ for key in pairs(focusKeys) do
 	end)
 end
 
-
 local PreviousPowerSource = battery.powerSource()
 
 return battery.watcher.new(function()
