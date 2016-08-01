@@ -46,6 +46,7 @@
 			  let g:UltiSnipsUsePythonVersion = 2
 		  Plug 'honza/vim-snippets'
 		  Plug 'tpope/vim-sleuth'
+		  Plug 'Raimondi/vim_search_objects'
 		  Plug 'michaeljsmith/vim-indent-object'
 		  Plug 'ervandew/supertab'
 			  let g:SuperTabDefaultCompletionType="<c-n>"
@@ -76,7 +77,7 @@
 	set number
 	set wrap nolist linebreak breakindent
 	set incsearch hlsearch ignorecase smartcase
-	set expandtab tabstop=4 shiftwidth=4
+	set expandtab tabstop=2 shiftwidth=2
 	set background=dark
 	let g:tex_flavor = "latex"
 	colorscheme solarized
@@ -136,7 +137,7 @@
 
 	" Ultisnips
 	let g:UltiSnipsExpandTrigger="<c-c>"
-	let g:UltiSnipsJumpForwardTrigger="<c-b>"
+	let g:UltiSnipsJumpForwardTrigger="<c-s>"
 	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 	" Neoterm
