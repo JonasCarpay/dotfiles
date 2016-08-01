@@ -33,6 +33,12 @@ alias rn=ranger
 alias sb='stack build'
 alias si='stack install'
 alias se='stack exec'
+alias cr='cabal run'
+alias cb='cabal build'
+alias ci='cabal install'
+alias cid='cabal install --only-dependencies -j'
+alias cs='cabal sandbox'
+
 
 ## FUNCTIONS
 function chpwd() {
