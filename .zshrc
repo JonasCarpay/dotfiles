@@ -3,13 +3,13 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git brew z sudo)
+plugins=(git brew z sudo stack)
 export EDITOR=nvim
 
 ## PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbin"
-export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
@@ -33,6 +33,7 @@ alias rn=ranger
 alias sb='stack build'
 alias si='stack install'
 alias se='stack exec'
+alias sr='stack repl'
 alias cr='cabal run'
 alias cb='cabal build'
 alias ci='cabal install'
