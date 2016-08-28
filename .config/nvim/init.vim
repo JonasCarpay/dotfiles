@@ -125,6 +125,18 @@
 	nn <C-s> :if &syntax=="on" <Bar> set syntax=off <Bar> else <Bar> set syntax=on <Bar> endif<CR>
 	vnoremap @ :norm@
 
+  function! GithubSearch()
+    let termRaw   = getreg("9")
+    let termClean = " " . substitute(termRaw,   "[^a-zA-Z0-9 ]", " ", "g")
+    let term      = substitute(termClean, "\s\+",          " ", "g")
+    let prefix    = "https://github.com/search?utf8=✓&type=Code&q=language:"
+    let url       = prefix . &ft . term
+    exec "!automator -i \"" . url . "\" ~/Dev/viewURL.workflow"
+  endfunction
+  vn <leader>gh "9y:call GithubSearch()<CR>
+  nn <leader>gh viw"9y:call GithubSearch()<CR>
+
+
 	" Dash-vim
 	nn <leader>d :Dash<CR>
 
