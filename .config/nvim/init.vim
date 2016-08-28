@@ -29,7 +29,7 @@
 			Plug 'neomake/neomake'
 				" Neomake cfg {{{
 						autocmd! BufWritePost * Neomake
-						let g:neomake_haskell_enabled_makers = ['ghcmod']
+						let g:neomake_haskell_enabled_makers = ['ghcmod', 'hlint']
 				" }}}
 			Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 				" Deoplete cfg {{{
@@ -101,7 +101,7 @@
 	" Remaps
 		vn > >gv
 		vn < <gv
-		nn Q <nop>
+		nn Q :normal @q<CR>
 		nn , za
 		nn j gj
 		nn k gk
@@ -149,6 +149,7 @@
 		let g:fzf_tags_command = 'hasktags -xc .'
 		map	<leader>ff :Files<CR>
 		map	<leader>fg :Ag<CR>
+		map	<leader>fw :Ag <C-R><C-W><CR>
 		map	<leader>ft :Tags<CR>
 		map	<leader>fh :Helptags<CR>
 
