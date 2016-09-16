@@ -76,6 +76,7 @@
 			Plug 'jeetsukumaran/vim-indentwise'
 			Plug 'kassio/neoterm'
 			Plug 'rizzatti/dash.vim'
+			Plug 'tyru/open-browser.vim'
 
 	call plug#end()
 " NeoBundle }}}
@@ -127,11 +128,12 @@
 
   function! GithubSearch()
     let termRaw   = getreg("9")
-    let termClean = " " . substitute(termRaw,   "[^a-zA-Z0-9 ]", " ", "g")
-    let term      = substitute(termClean, "\s\+",          " ", "g")
-    let prefix    = "https://github.com/search?utf8=✓&type=Code&q=language:"
-    let url       = prefix . &ft . term
-    exec "!automator -i \"" . url . "\" ~/Dev/viewURL.workflow"
+    let termClean = " " . substitute(termRaw, "[^a-zA-Z0-9 ]", " ", "g")
+    let term      = substitute(termClean, "\s\+", " ", "g")
+    let termEsc   = substitute(term, " ", "+", "g")
+    let prefix    = "https://github.com/search?&type=Code&q=language:"
+    let url       = prefix . &ft . termEsc
+    exec openbrowser#open(url)
   endfunction
   vn <leader>gh "9y:call GithubSearch()<CR>
   nn <leader>gh viw"9y:call GithubSearch()<CR>
