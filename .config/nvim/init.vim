@@ -106,11 +106,6 @@
 		nn , za
 		nn j gj
 		nn k gk
-		nn H ^
-    nn L $
-    nn M J
-    nn J L
-    nn K H
 
 	" Exiting
 		ino hj <esc>
