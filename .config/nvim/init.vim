@@ -84,6 +84,7 @@
 	syntax enable
 	set syntax=on
 	set number
+  set termguicolors
 	colorscheme fahrenheit
 	set wrap nolist linebreak breakindent
 	set incsearch hlsearch ignorecase smartcase
@@ -109,9 +110,7 @@
 
 	" Exiting
 		ino hj <esc>
-		ino jh <esc>
-		ino HJ <esc>
-		ino Hj <esc>
+		vn  hj <esc>
 		imap jj <CR>
 
 	nn <C-j> <C-w>}
@@ -189,7 +188,7 @@
     autocmd FileType haskell ino **	<space><*><space>
     autocmd FileType haskell nn <Leader>ht :GhcModTypeInsert<CR>
     autocmd FileType haskell nn <Leader>hq :GhcModType<CR>
-    autocmd FileType haskell nn <Leader>hs :GhcModSplitFunCase<CR>
+    autocmd FileType haskell nn <Leader>hs :!stack test<CR>
     autocmd FileType haskell nn <Leader>hc :GhcModCheck<CR>
     autocmd FileType haskell nn <Leader>hr :Hrename 
     autocmd FileType haskell nn <Leader>hi :HsimportSymbol<CR>
