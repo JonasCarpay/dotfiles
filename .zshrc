@@ -10,7 +10,9 @@ export EDITOR=nvim
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.stack/programs/x86_64-osx/ghc-8.0.1/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/Developer/NVIDIA/CUDA-7.5/bin${PATH:+:${PATH}}
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib\
+                           ${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 source $ZSH/oh-my-zsh.sh
 
 ## ALIASES
@@ -31,6 +33,7 @@ alias c=cd
 alias p=python3
 alias rn=ranger
 alias sb='stack build'
+alias sc='stack clean'
 alias si='stack install'
 alias se='stack exec'
 alias sr='stack repl'
