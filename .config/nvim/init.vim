@@ -62,7 +62,6 @@
 		" Language-specific
 			" Haskell
 				Plug 'neovimhaskell/haskell-vim'
-				Plug 'jonascarpay/vim-hsimport'
 				Plug 'glittershark/vim-hare'
 				Plug 'eagletmt/ghcmod-vim'
 				Plug 'eagletmt/neco-ghc'
@@ -143,6 +142,8 @@
 
 	" Git/gutter/fugitive
 	nn <Leader>gt :GitGutterToggle<CR>
+	nn <Leader>ga :GitGutterStageHunk<CR>
+	nn <Leader>gA :GitGutterUndoHunk<CR>
 	nn <Leader>gs :Gstatus<CR>
 	nn <Leader>gc :Gcommit<CR>
 	nn <Leader>gd :Gdiff<CR>
@@ -178,14 +179,14 @@
     let g:haskellmode_completion_ghc = 0
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
     autocmd FileType haskell set formatprg=pointfree\ --stdin
-    autocmd FileType haskell ino >>	<space>-><space>
-    autocmd FileType haskell ino +>	<space>=><space>
-    autocmd FileType haskell ino <<	<space><-<space>
-    autocmd FileType haskell ino >+	<space>>>=<space>
-    autocmd FileType haskell ino >>> <space>>><space>
-    autocmd FileType haskell ino $$	<space><$><space>
-    autocmd FileType haskell ino ::	<space>::<space>
-    autocmd FileType haskell ino **	<space><*><space>
+    "autocmd FileType haskell ino >>	<space>-><space>
+    "autocmd FileType haskell ino +>	<space>=><space>
+    "autocmd FileType haskell ino <<	<space><-<space>
+    "autocmd FileType haskell ino >+	<space>>>=<space>
+    "autocmd FileType haskell ino >>> <space>>><space>
+    "autocmd FileType haskell ino $$	<space><$><space>
+    "autocmd FileType haskell ino ::	<space>::<space>
+    "autocmd FileType haskell ino **	<space><*><space>
     autocmd FileType haskell nn <Leader>ht :GhcModTypeInsert<CR>
     autocmd FileType haskell nn <Leader>hq :GhcModType<CR>
     autocmd FileType haskell nn <Leader>hs :!stack test<CR>
