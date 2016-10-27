@@ -52,6 +52,9 @@ function chpwd() {
 }
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+# Show hostname if not at home
+[[ $(hostname -s) != "Jonass-MacBook-Pro" ]] && export PROMPT="$(hostname -s) $PROMPT"
+
 eval `/usr/libexec/path_helper -s`
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
