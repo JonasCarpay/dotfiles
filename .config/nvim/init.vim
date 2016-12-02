@@ -194,6 +194,7 @@
     autocmd FileType haskell nn <Leader>hr :Hrename 
     autocmd FileType haskell nn <Leader>hi :HsimportSymbol<CR>
     autocmd FileType haskell nn <Leader>hm :HsimportModule<CR>
+    autocmd! BufWritePost *.hs :silent execute "!rm tags && hasktags -xc ."
   " }}}
 " Plugin-specific {{{
 	" NERDTree {{{
