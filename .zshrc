@@ -43,6 +43,7 @@ alias cb='cabal build'
 alias ci='cabal install'
 alias cid='cabal install --only-dependencies -j'
 alias cs='cabal sandbox'
+alias rd='rm -rf'
 
 
 ## FUNCTIONS
