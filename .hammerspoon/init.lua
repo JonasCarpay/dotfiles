@@ -10,7 +10,7 @@ end)
 
 local focusKeys = {
 	s='Safari',
-	c='Firefox',
+	c='Google Chrome',
 	t='iTerm',
 	p='Spotify',
 	m='Telegram',
@@ -22,6 +22,10 @@ for key in pairs(focusKeys) do
 		hs.application.launchOrFocus(focusKeys[key])
 	end)
 end
+
+hs.hotkey.bind(modalKey, 'g', function()
+  hs.execute("spotify play Guile Theme", true)
+end)
 
 local PreviousPowerSource = battery.powerSource()
 
