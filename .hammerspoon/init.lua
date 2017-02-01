@@ -27,6 +27,10 @@ hs.hotkey.bind(modalKey, 'g', function()
   hs.execute("spotify play Guile Theme", true)
 end)
 
+hs.hotkey.bind(modalKey, 'k', function()
+  hs.execute("open 'https://www.youtube.com/watch?v=y37D0BvACv0'", true)
+end)
+
 local PreviousPowerSource = battery.powerSource()
 
 return battery.watcher.new(function()
