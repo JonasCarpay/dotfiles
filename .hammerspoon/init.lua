@@ -14,7 +14,6 @@ local focusKeys = {
 	t='iTerm',
 	p='Spotify',
 	m='Telegram',
-	i='IntelliJ IDEA 15 CE',
 }
 
 for key in pairs(focusKeys) do

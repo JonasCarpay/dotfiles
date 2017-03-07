@@ -25,6 +25,7 @@
 		" Syntax and highlighting
 			Plug 'altercation/vim-colors-solarized'
 			Plug 'fcpg/vim-fahrenheit'
+			Plug 'rakr/vim-one'
 			Plug 'scrooloose/nerdcommenter'
 			Plug 'neomake/neomake'
 				" Neomake cfg {{{
@@ -48,14 +49,11 @@
 			Plug 'tpope/vim-surround'
 			Plug 'Lokaltog/vim-easymotion'
 			Plug 'junegunn/vim-easy-align'
-			Plug 'junegunn/goyo.vim'
-			Plug 'junegunn/limelight.vim'
 			Plug 'SirVer/ultisnips'
 				let g:UltiSnipsUsePythonVersion = 2
 			Plug 'honza/vim-snippets'
 			Plug 'Raimondi/vim_search_objects'
 			Plug 'michaeljsmith/vim-indent-object'
-			Plug 'metakirby5/codi.vim'
 			Plug 'ervandew/supertab'
 				let g:SuperTabDefaultCompletionType="<c-n>"
 
@@ -65,9 +63,10 @@
 				Plug 'glittershark/vim-hare'
 				Plug 'eagletmt/ghcmod-vim'
 				Plug 'eagletmt/neco-ghc'
-				let g:necoghc_enable_detailed_browse = 1
+          let g:necoghc_enable_detailed_browse = 1
 			Plug 'mattn/emmet-vim'
 			Plug 'Slava/vim-spacebars'
+      Plug 'rust-lang/rust.vim'
 
 		" Other
 			Plug 'vim-airline/vim-airline'
@@ -83,9 +82,12 @@
 	syntax enable
 	set syntax=on
 	set number
+  set scrolloff=3
   set termguicolors
 	colorscheme fahrenheit
 	set wrap nolist linebreak breakindent
+  set inccommand=nosplit
+  set indentkeys-=<space>
 	set incsearch hlsearch ignorecase smartcase
 	set expandtab tabstop=2 shiftwidth=2
 	set background=dark
@@ -109,8 +111,8 @@
 
 	" Exiting
 		ino hj <esc>
+		ino Hj <esc>
 		vn  hj <esc>
-		imap jj <CR>
 
 	nn <C-j> <C-w>}
 	nn <Leader>op :vnew<CR>:set pvw<CR><C-w>20<<C-w>h
@@ -147,9 +149,6 @@
 	nn <Leader>gs :Gstatus<CR>
 	nn <Leader>gc :Gcommit<CR>
 	nn <Leader>gd :Gdiff<CR>
-
-  nn <leader>lg :Goyo<CR>
-  nn <leader>ll :Limelight!! 0.3<CR>
 
 	" Easy-align
 	vmap <Enter> <Plug>(LiveEasyAlign)

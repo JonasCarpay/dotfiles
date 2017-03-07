@@ -33,6 +33,7 @@ alias c=cd
 alias p=python3
 alias rn=ranger
 alias sb='stack build'
+alias sbe='stack build && stack exec'
 alias sc='stack clean'
 alias si='stack install'
 alias se='stack exec'
