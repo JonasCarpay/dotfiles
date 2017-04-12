@@ -1412,7 +1412,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -1432,13 +1432,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>424 182 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>403 435 958 433 0 0 1440 900 </string>
+	<string>-1037 22 770 409 -1440 -437 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Hasklig-Regular</key>
 	<string>560 213 260 570 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>605 196 810 588 0 0 1920 1057 </string>
+	<string>393 148 810 567 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1156 -338 570 458 -1440 -437 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -2458,12 +2458,14 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-28T23:32:30Z</date>
+	<date>2017-03-14T16:56:22Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>

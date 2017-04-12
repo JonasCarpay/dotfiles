@@ -67,6 +67,7 @@
 			Plug 'mattn/emmet-vim'
 			Plug 'Slava/vim-spacebars'
       Plug 'rust-lang/rust.vim'
+      Plug 'Harenome/vim-mipssyntax'
 
 		" Other
 			Plug 'vim-airline/vim-airline'

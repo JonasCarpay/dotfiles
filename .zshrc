@@ -10,6 +10,7 @@ export EDITOR=nvim
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.stack/programs/x86_64-osx/ghc-8.0.1/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.5/bin${PATH:+:${PATH}}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib\
                            ${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
