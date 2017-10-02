@@ -1,4 +1,4 @@
-" Neovim configuration
+let mapleader = "\<space>"
 
 " Vim-plug	{{{
 	call plug#begin('~/.config/nvim/plugged')
@@ -6,7 +6,6 @@
 			UpdateRemotePlugins
 		endfunction
 		" Helpers
-			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-repeat'
 			Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
@@ -15,23 +14,19 @@
 			Plug 'airblade/vim-gitgutter'
 
 		" File navigation
-			Plug 'scrooloose/nerdtree'
-			Plug 'albfan/nerdtree-git-plugin'
-			Plug 'ryanoasis/vim-devicons'
 			Plug 'tpope/vim-eunuch'
 			Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 			Plug 'junegunn/fzf.vim'
 
 		" Syntax and highlighting
-			Plug 'altercation/vim-colors-solarized'
 			Plug 'fcpg/vim-fahrenheit'
-			Plug 'rakr/vim-one'
+      Plug 'neomake/neomake'
+        " Neomake cfg {{{
+          autocmd! BufWritePost * Neomake
+          nn <leader>n :Neomake<CR>
+          let g:neomake_haskell_enabled_makers = ['ghcmod', 'hlint']
+        " }}}
 			Plug 'scrooloose/nerdcommenter'
-			Plug 'neomake/neomake'
-				" Neomake cfg {{{
-						autocmd! BufWritePost * Neomake
-						let g:neomake_haskell_enabled_makers = ['ghcmod', 'hlint']
-				" }}}
 			Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 				" Deoplete cfg {{{
 						let g:deoplete#enable_at_startup = 1
@@ -44,8 +39,10 @@
 						endfunction
 				" }}}
 			Plug 'ntpeters/vim-better-whitespace'
+      Plug 'sheerun/vim-polyglot'
 
 		" Editing
+			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-surround'
 			Plug 'Lokaltog/vim-easymotion'
 			Plug 'junegunn/vim-easy-align'
@@ -55,32 +52,40 @@
 			Plug 'Raimondi/vim_search_objects'
 			Plug 'michaeljsmith/vim-indent-object'
 			Plug 'ervandew/supertab'
-				let g:SuperTabDefaultCompletionType="<c-n>"
+        let g:SuperTabDefaultCompletionType = "<c-n>"
 
 		" Language-specific
-			" Haskell
-				Plug 'neovimhaskell/haskell-vim'
-				Plug 'glittershark/vim-hare'
+			" Haskell {{{
 				Plug 'eagletmt/ghcmod-vim'
+				Plug 'glittershark/vim-hare'
 				Plug 'eagletmt/neco-ghc'
-          let g:necoghc_enable_detailed_browse = 1
-			Plug 'mattn/emmet-vim'
-			Plug 'Slava/vim-spacebars'
-      Plug 'rust-lang/rust.vim'
+        let g:necoghc_enable_detailed_browse = 1
+      " }}}
+      " Rust {{{
+        Plug 'racer-rust/vim-racer'
+        set hidden
+        let g:racer_cmd = "~/.cargo/bin/racer"
+        au FileType rust nmap gd <Plug>(rust-def)
+        au FileType rust nmap gs <Plug>(rust-def-split)
+        au FileType rust nmap gx <Plug>(rust-def-vertical)
+        au FileType rust nmap <leader>gd <Plug>(rust-doc)
+        au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+        au BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+      " }}}
+      Plug 'rbonvall/snipmate-snippets-bib'
       Plug 'Harenome/vim-mipssyntax'
+      "Plug 'OmniSharp/omnisharp-vim'
 
 		" Other
 			Plug 'vim-airline/vim-airline'
-			Plug 'vim-airline/vim-airline-themes'
 			Plug 'jeetsukumaran/vim-indentwise'
-			Plug 'kassio/neoterm'
 			Plug 'rizzatti/dash.vim'
-			Plug 'tyru/open-browser.vim'
 
 	call plug#end()
-" NeoBundle }}}
+  " }}}
 " System settings {{{
 	syntax enable
+  set mouse=a
 	set syntax=on
 	set number
   set scrolloff=3
@@ -97,12 +102,21 @@
 	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 	set splitright
   autocmd FileType * set syntax=on " To allow syntax highlighting toggling
-
-" }}}
+  " Cursorline {{{
+    set cursorline
+    autocmd InsertEnter * set nocursorline
+    autocmd InsertLeave * set cursorline
+    autocmd BufEnter * set cursorline
+    autocmd BufLeave * set nocursorline
+    " }}}
+  " }}}
 " Key bindings {{{
-	let mapleader = "\<space>"
-
 	" Remaps
+    nmap H [-
+    nmap L ]+
+    nmap J ]=
+    nmap K [=
+    nn M J
 		vn > >gv
 		vn < <gv
 		nn Q :normal @q<CR>
@@ -118,27 +132,15 @@
 	nn <C-j> <C-w>}
 	nn <Leader>op :vnew<CR>:set pvw<CR><C-w>20<<C-w>h
 	nn <Leader>ch :nohl<CR>
+	nn <Leader>l :lopen<CR>
 	autocmd FileType haskell nn <Leader>ch :nohl<CR>:GhcModTypeClear<CR>
 	nn <Leader>yy mmggVG"*y'm
 	nn <Leader>yp :set paste<CR>"*p:set nopaste<CR>
 	nn <Leader>w :wa<CR>
-	nn <Leader>n :NERDTreeToggle<CR>
-	nn <Leader>m :T make<CR>
 	nn <C-s> :if &syntax=="on" <Bar> set syntax=off <Bar> else <Bar> set syntax=on <Bar> endif<CR>
 	vnoremap @ :norm@
 
-  function! GithubSearch()
-    let termRaw   = getreg("9")
-    let termClean = " " . substitute(termRaw, "[^a-zA-Z0-9 ]", " ", "g")
-    let term      = substitute(termClean, "\s\+", " ", "g")
-    let termEsc   = substitute(term, " ", "+", "g")
-    let prefix    = "https://github.com/search?&type=Code&q=language:"
-    let url       = prefix . &ft . termEsc
-    exec openbrowser#open(url)
-  endfunction
-  vn <leader>gh "9y:call GithubSearch()<CR>
-  nn <leader>gh viw"9y:call GithubSearch()<CR>
-
+  inoremap <A-[> {<CR>}<esc>O
 
 	" Dash-vim
 	nn <leader>d :Dash<CR>
@@ -160,7 +162,6 @@
 	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 	" FZF
-		let g:fzf_tags_command = 'hasktags -xc .'
 		map	<leader>ff :Files<CR>
 		map	<leader>fg :Ag<CR>
 		map	<leader>fw :Ag <C-R><C-W><CR>
@@ -172,10 +173,8 @@
 
 		map	<leader>fl :Lines<CR>
 
-" Key bindings }}}
+  " }}}
   " Language config {{{
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType vim setlocal foldlevel=0
     let g:haskellmode_completion_ghc = 0
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
     autocmd FileType haskell set formatprg=pointfree\ --stdin
@@ -197,31 +196,7 @@
     autocmd! BufWritePost *.hs :silent execute "!rm tags && hasktags -xc ."
   " }}}
 " Plugin-specific {{{
-	" NERDTree {{{
-		autocmd StdinReadPre * let s:std_in=1
-		let NERDTreeShowHidden=1
-		let NERDTreeQuitOnOpen=1
-
-		" NERDTress File highlighting
-		function! NERDTreeHighlightFile(extension, fg, bg,)
-			exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='.	a:fg
-			exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-		endfunction
-
-		call NERDTreeHighlightFile('md', 'blue', 'none')
-		call NERDTreeHighlightFile('ds_store', 'black', 'none')
-		call NERDTreeHighlightFile('gitconfig', 'black', 'none')
-		call NERDTreeHighlightFile('gitignore', 'gray', 'none')
-
-		"Set cursorline in normal mode
-		set cursorline
-		autocmd InsertEnter * set nocursorline
-		autocmd InsertLeave * set cursorline
-		autocmd BufEnter * set cursorline
-		autocmd BufLeave * set nocursorline
-		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-	" }}}
-	" Other {{{
 		let g:airline_mode_map = { '__' : '-', 'n'	: 'N', 'i'	: 'I', 'R'	: 'R', 'c'	: 'C', 'v'	: 'V', 'V'	: 'V', '' : 'V', 's'	: 'S', 'S'	: 'S', '' : 'S', }
-	" }}}
-" }}}
+  " }}}
+
+" vim:fdm=marker:foldopen=all:foldclose=all

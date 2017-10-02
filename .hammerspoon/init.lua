@@ -9,8 +9,10 @@ hs.hotkey.bind(modalKey, "r", function()
 end)
 
 local focusKeys = {
+	a='Anki',
+	f='Finder',
 	s='Safari',
-	c='Google Chrome',
+	c='Firefox',
 	t='iTerm',
 	p='Spotify',
 	m='Telegram',

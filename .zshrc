@@ -11,10 +11,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/local/bin:/usr/sbi
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.stack/programs/x86_64-osx/ghc-8.0.1/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
+
 export PATH=/Developer/NVIDIA/CUDA-7.5/bin${PATH:+:${PATH}}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib\
                            ${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 source $ZSH/oh-my-zsh.sh
+
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
 
 ## ALIASES
 alias vi=nvim
@@ -23,6 +27,7 @@ alias dc="cd ~/Documents/"
 alias dv="cd ~/Dev/"
 alias dw="cd ~/Downloads/"
 alias dr="cd ~/Dropbox/"
+alias dm="cd ~/Documents/CE/"
 alias l='ls -l'
 alias bci="brew cask install"
 alias ack=ag
@@ -69,3 +74,7 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#echo ""
+#fortune -a
+#echo ""
