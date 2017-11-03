@@ -57,7 +57,6 @@ let mapleader = "\<space>"
 		" Language-specific
 			" Haskell {{{
 				Plug 'eagletmt/ghcmod-vim'
-				Plug 'glittershark/vim-hare'
 				Plug 'eagletmt/neco-ghc'
         let g:necoghc_enable_detailed_browse = 1
       " }}}
